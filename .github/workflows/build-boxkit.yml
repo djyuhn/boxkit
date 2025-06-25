@@ -28,6 +28,8 @@ jobs:
       fail-fast: false
       matrix:
         containerfile: 
+          - arch-godot
+          - arch-blender
     steps:
       # Clone code to runner
       - name: Checkout
