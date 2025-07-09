@@ -1,0 +1,32 @@
+FROM ghcr.io/ublue-os/arch-toolbox:latest AS arch-blender
+
+RUN pacman -Syu \
+    lib32-vulkan-radeon \
+    libva-mesa-driver \
+    vulkan-mesa-layers \
+    lib32-vulkan-mesa-layers \
+    lib32-libnm \
+    openal \
+    pipewire \
+    pipewire-pulse \
+    pipewire-alsa \
+    pipewire-jack \
+    wireplumber \
+    lib32-pipewire \
+    lib32-pipewire-jack \
+    lib32-libpulse \
+    lib32-openal \
+    xdg-user-dirs \
+    xdotool \
+    xorg-xwininfo \
+    wmctrl \
+    wxwidgets-gtk3 \
+    rocm-opencl-runtime \
+    rocm-hip-runtime \
+    libbsd \
+    noto-fonts-cjk \
+    glibc-locales \
+    blender \
+    --noconfirm
+
+RUN rm -rf /tmp/*
