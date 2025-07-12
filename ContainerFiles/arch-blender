@@ -1,0 +1,14 @@
+FROM ghcr.io/ublue-os/arch-toolbox:latest AS arch-blender
+
+RUN pacman -Syu \
+    lib32-vulkan-radeon \
+    libva-mesa-driver \
+    vulkan-mesa-layers \
+    lib32-vulkan-mesa-layers \
+    lib32-libnm \
+    rocm-opencl-runtime \
+    rocm-hip-runtime \
+    blender \
+    --noconfirm
+
+RUN rm -rf /tmp/*
